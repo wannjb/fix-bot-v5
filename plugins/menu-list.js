@@ -230,7 +230,10 @@ let handler = async (m, { conn, command, groupMetadata, usedPrefix: _p, __dirnam
       'storemenu': 'Store Menu'
     }
      if (teks == 'jadibot') tags = {
-       'jadibot': 'Jadi Bot'
+       'jadibot': 'Jadi Bot'}
+    }
+     if (teks == 'sendbug/virus') tags = {
+       'sendbug': 'Send Bug'}
      }
      if (teks == 'jadian') tags = {
       'jadian': 'Jadian Menu'
@@ -420,12 +423,12 @@ let tek = `✧────···[ Dashboard ]···────✧
      │
      ├━━━━━━━━━━━━━━━━┈─⋆
      │
-     │ ▸ *Sumber :* YouTube WH-MODS-DEV
+     │ ▸ *Sumber :* Private
      │ ▸ *ᴀᴜᴛʜᴏʀ :* ${nameown}
      ┴ ▸ *ᴏᴡɴᴇʀ :* ${nameown}
      ✧
      ┬ 📌 𝗣𝗶𝗻𝗻𝗲𝗱 :
-     │ ʙᴇʀɪ ᴊᴇᴅᴀ ʏᴀʜ ᴋᴀᴋ ^ω^
+     │ ʙᴇʀɪ ᴊᴇᴅᴀ ʏᴀʜ ^ω^
      │
      ├━━━━━━━━━━━━━━━━┈─⋆
      │${emot} *ʀᴏʟᴇ:* ${usrs.role}${usrs.premiumTime > 1 ? `
